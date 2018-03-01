@@ -1,0 +1,6 @@
+<p>{{message}}</p>
+<input type="text" ng-model="newText">
+<button type="button" ng-click="hc.addText(newText)">Do the Thing!</button>
+<ul ng-repeat="item in hc.text.list track by $index"> <!-- Track by $index allows for duplicate entries, might also allow some better targeting due to uniqueness -->
+<li>{{item}}</li>
+</ul>

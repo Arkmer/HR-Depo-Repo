@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVC (views/routes)</title>
+    <script src="vendors/angular/angular.js"></script>
+    <script src="vendors/angular-route/angular-route.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="controllers/HomeController.js"></script>
+    <script src="controllers/AwayController.js"></script>
+    <script src="services/CustomService.js"></script>
+</head>
+    <body ng-app="routesApp"> <!-- Allows you to link the html to the client, also set up the client side at this time -->
+        <nav> <!-- Doesn't have to be a 'nav' but it does signify that we're putting navigation buttons here -->
+            <a href="/#!">Home</a>
+            <a href="/#!away">Away</a> <!-- '/#!' interrupts the url to do something that angular wants instead -->
+        </nav>
+        <main ng-view> <!-- Doesn't need any inputs? What if I have more than one ng-view? -->
+            <!-- This is where the other views display, they don't need the full <!DOCTYPE HTML> treatment -->
+        </main>
+    </body>
+</html>
