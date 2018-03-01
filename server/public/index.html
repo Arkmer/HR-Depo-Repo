@@ -8,14 +8,16 @@
     <script src="vendors/angular/angular.js"></script>
     <script src="vendors/angular-route/angular-route.js"></script>
     <script src="scripts/client.js"></script>
-    <script src="controllers/HomeController.js"></script>
-    <script src="controllers/AwayController.js"></script>
+    <script src="controllers/addFormController.js"></script>
+    <script src="controllers/trackerController.js"></script>
+    <script src="controllers/reportController.js"></script>
     <script src="services/CustomService.js"></script>
 </head>
     <body ng-app="routesApp"> <!-- Allows you to link the html to the client, also set up the client side at this time -->
         <nav> <!-- Doesn't have to be a 'nav' but it does signify that we're putting navigation buttons here -->
-            <a href="/#!">Home</a>
-            <a href="/#!away">Away</a> <!-- '/#!' interrupts the url to do something that angular wants instead -->
+            <a href="/#!">Add Employee</a>
+            <a href="/#!tracker">Tracker</a> <!-- '/#!' interrupts the url to do something that angular wants instead -->
+            <a href="/#!report">Report</a>
         </nav>
         <main ng-view> <!-- Doesn't need any inputs? What if I have more than one ng-view? -->
             <!-- This is where the other views display, they don't need the full <!DOCTYPE HTML> treatment -->
