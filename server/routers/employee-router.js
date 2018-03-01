@@ -1,22 +1,23 @@
 const express = require('express');
-const router = express.Router(;
+const router = express.Router();
 
 const mongoose = require('mongoose');
 
 //create Schema
 const EmployeeSchema = new mongoose.Schema(
 {
-    Name: {type: String, requre: True},
+    Name: {type: String, require: true},
     ID: Number,
     Title: String,
-    HireDate:{ type: Date, Default:date},
+    HireDate:{ type: Date, Default: Date()},
     Salary: Number,
 
 }
 );
 const Employee = mongoose.model('Employee', EmployeeSchema, 'Employees');
+
 router.get('/', (request, response) => {
-    Employee.find({}, (error, Found Employees) => {
+    Employee.find({}, (error, foundEmployees) => {
       if (error){
         console.log('error on find employees:', error);
         response.sendStatus(500);

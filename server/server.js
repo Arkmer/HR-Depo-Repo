@@ -13,7 +13,7 @@ mongoose.connection.on('connected', function () {
     console.log('mongoose connected to: ', databaseUrl);
 })
 
-mongoose.connections.on('error', function (error) {
+mongoose.connection.on('error', function (error) {
     console.log('mongoose connection error: ', error);   
 })
 
