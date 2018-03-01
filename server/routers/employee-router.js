@@ -14,7 +14,7 @@ const EmployeeSchema = new mongoose.Schema(
 
 }
 );
-const Employee = mongoose.model('Employee', EmployeeSchema, 'Employees');
+const Employee = mongoose.model('Employee', EmployeeSchema, 'hr');
 
 router.get('/', (request, response) => {
     Employee.find({}, (error, foundEmployees) => {
@@ -28,7 +28,7 @@ router.get('/', (request, response) => {
   });
   
   router.post('/', (request, response) => {
-    let newEmployee = new Employees(request.body);
+    let newEmployee = new Employee (request.body);
     console.log('Employee to save is', request.body);
     newEmployee.save((error, savedEmployee) => {
       if (error){
@@ -55,8 +55,8 @@ router.get('/', (request, response) => {
         }
       }
     )
-  })
 
+  })
   router.delete('/:id', (request, response) => {
     let id = request.params.id;
     let employeeTo = request.body;
@@ -72,6 +72,6 @@ router.get('/', (request, response) => {
         }
       }
     )
-  })
-  
+  });
+
   module.exports = router;
