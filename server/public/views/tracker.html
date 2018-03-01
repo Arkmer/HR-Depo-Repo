@@ -8,11 +8,11 @@
         <th>Hire Date</th>
         <th>Salary</th>
     </thead>
-    <tr ng-repeat="">
-        <td>{{employeeRecieved.name}}</td>
-        <td>{{employeeRecieved.id}}</td>
-        <td>{{employeeRecieved.title}}</td>
-        <td>{{employeeRecieved.hireDate}}</td>
-        <td>{{employeeRecieved.salary}}</td>
+    <tr ng-repeat="employeeReceived in tc.employeeArray.list">
+        <td>{{employeeReceived.Name}}</td>
+        <td>{{employeeReceived.ID}}</td>
+        <td>{{employeeReceived.Title}}</td>
+        <td>{{employeeReceived.HireDate}}</td>
+        <td>{{employeeReceived.Salary}}</td>
     </tr>
 </table>

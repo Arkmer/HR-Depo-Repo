@@ -10,7 +10,7 @@ const EmployeeSchema = new mongoose.Schema(
     ID: Number,
     Title: String,
     HireDate:{ type: Date, Default: Date()},
-    Salary: Number,
+    Salary: Number
 
 }
 );

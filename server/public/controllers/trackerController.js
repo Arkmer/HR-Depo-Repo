@@ -3,5 +3,14 @@ app.controller('trackerController', ['CustomService', '$scope', function(CustomS
     let self = this;
     $scope.header = 'Tracker page';
 
-    $scope.employeeRecieved = ?????;
+    self.getEmployees = CustomService.getEmployees;
+    
+
+    self.getEmployees();
+    self.employeeArray = CustomService.employeeArray;
+
+    console.log( self.employeeArray );
+    
+    
+    // $scope.employeeRecieved = ?????;
 }])

@@ -1,9 +1,9 @@
 <p>{{header}}</p>
-<form action="">
-    <input type="text" ng-model="nameIn" placeholder="Name">
-    <input type="integer" ng-model="idIn" placeholder="ID">
-    <input type="text" ng-model="titleIn" placeholder="Job Title">
-    <input type="date" ng-model="hireDateIn" placeholder="Hire Date">
-    <input type="integer" ng-model="salaryIn" placeholder="Salary">
-    <button type="button" ng-click="hc.addEmployee(nameIn, idIn, titleIn, hireDateIn, salaryIn)">Add Employee</button>
+<form>
+    <input type="text" ng-model="afc.newEmployee.Name" placeholder="Name">
+    <input type="integer" ng-model="afc.newEmployee.ID" placeholder="ID">
+    <input type="text" ng-model="afc.newEmployee.Title" placeholder="Job Title">
+    <input type="date" ng-model="afc.newEmployee.HireDate" placeholder="Hire Date">
+    <input type="integer" ng-model="afc.newEmployee.Salary" placeholder="Salary">
+    <button type="button" ng-click="afc.sendEmployees(afc.newEmployee)">Add Employee</button>
 </form>

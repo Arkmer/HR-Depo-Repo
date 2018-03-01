@@ -5,11 +5,7 @@ app.controller('addFormController', ['CustomService', '$scope', function(CustomS
 
     self.text = CustomService.text;
 
-    self.addEmployee = function(nameIn, idIn, titleIn, hireDateIn, salaryIn){
-        console.log(CustomService.text);
+    self.newEmployee = CustomService.newEmployee;
+    self.sendEmployees = CustomService.sendEmployees;
 
-        // Need to be placed into the schema and sent to the right location
-
-        self.text.list.push(newText);
-    }
-}])
+}]);
