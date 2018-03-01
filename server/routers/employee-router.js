@@ -43,12 +43,29 @@ router.get('/', (request, response) => {
   router.put('/:id', (request, response) => {
     let id = request.params.id;
     let employeeToUpdate = request.body;
-    Game.findByIdAndUpdate(
+    Employee.findByIdAndUpdate(
       {"_id": id} ,
       {$set: employeeToUpdate},
       (error, updatedEmployee) => {
         if (error){
           console.log('error on update Employee:', error);
+          response.sendStatus(500);
+        } else {
+          response.sendStatus(200);
+        }
+      }
+    )
+  })
+
+  router.delete('/:id', (request, response) => {
+    let id = request.params.id;
+    let employeeTo = request.body;
+    Employee.findByIdAndUpdate(
+      {"_id": id} ,
+      {$set: employeeToUpdate},
+      (error, updatedEmployee) => {
+        if (error){
+          console.log('error on update game:', error);
           response.sendStatus(500);
         } else {
           response.sendStatus(200);
