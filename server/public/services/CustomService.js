@@ -3,6 +3,7 @@ app.service('CustomService', ['$http',  function($http){
     let self = this;
 
     self.employeeArray = {list: []};
+    self.totalArray = {list:[]};
 
     self.newEmployee = {};
 
@@ -29,6 +30,19 @@ app.service('CustomService', ['$http',  function($http){
             self.getEmployees();
         }).catch(function (error) {
             console.log('error on post: ', error);
+        })
+    }
+    
+    self.getTotalEmployees = function() {
+        $http({
+            method:'GET',
+            url:'/hr/total'
+        }).then(function (response) {
+            console.log(response.data);
+            self.totalArray.list = response.data;
+            
+        }).catch(function (error) {
+            console.log('error on get: ', error);
         })
     }
 

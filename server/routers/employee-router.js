@@ -72,4 +72,16 @@ router.get('/', (request, response) => {
     )
   });
 
+  router.get('/hr/total', (request, response) => {
+    Employee.find({}, (error, foundEmployees) => {
+      if (error){
+        console.log('error on find total employees:', error);
+        response.sendStatus(500);
+      } else {
+        response.send(foundEmployees.count());
+        console.log(foundEmployees.count())
+      }
+    })
+  }); // end get total emps
+
   module.exports = router;
