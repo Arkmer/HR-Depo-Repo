@@ -5,14 +5,14 @@ const mongoose = require('mongoose');
 
 //create Schema
 const EmployeeSchema = new mongoose.Schema(
-{
-    Name: {type: String, require: true},
-    ID: Number,
-    Title: String,
-    HireDate:{ type: Date, Default: Date()},
-    Salary: Number
-
-}
+  {
+      Name: {type: String, require: true},
+      ID: Number,
+      Title: String,
+      HireDate:{ type: Date, Default: Date()},
+      Salary: Number,
+      Employed:{type: Boolean, Default: true }
+  }
 );
 const Employee = mongoose.model('Employee', EmployeeSchema, 'hr');
 
@@ -57,15 +57,17 @@ router.get('/', (request, response) => {
     )
 
   })
-  router.delete('/:id', (request, response) => {
+  router.put('/delete/:id', (request, response) => {
     let id = request.params.id;
-    Employee.findByIdAndRemove(
+    Employee.findByIdAndUpdate(
       {"_id": id},
+      {$set: {Employed: false}},
       (error, updatedEmployee) => {
         if (error){
           console.log('error on update game:', error);
           response.sendStatus(500);
         } else {
+          console.log('something changed to id', id);
           response.sendStatus(200);
         }
       }

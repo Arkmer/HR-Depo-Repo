@@ -48,8 +48,8 @@ app.service('CustomService', ['$http',  function($http){
 
     self.deleteEmployee = function (id) {
         $http({
-            method: 'DELETE',
-            url: `/hr/${id}`
+            method: 'PUT',
+            url: `/hr/delete/${id}`
         }).then(function (response) {
             self.getEmployees();
         }).catch(function (error) {
