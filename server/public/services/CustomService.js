@@ -43,4 +43,16 @@ app.service('CustomService', ['$http',  function($http){
         })
     }
 
+    self.editEmployee = function (employee) {
+        $http({
+            method: 'PUT',
+            url: `/hr/${employee._id}`,
+            data: employee
+        }).then(function (response) {
+            self.getEmployees();
+        }).catch(function (error) {
+            console.log('error on delete: ', error);
+        })
+    }
+
 }]);

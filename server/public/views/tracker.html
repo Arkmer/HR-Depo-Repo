@@ -11,12 +11,28 @@
         <th>Edit</th>
     </thead>
     <tr ng-repeat="employeeReceived in tc.employeeArray.list">
-        <td>{{employeeReceived.Name}}</td>
-        <td>{{employeeReceived.ID}}</td>
-        <td>{{employeeReceived.Title}}</td>
-        <td>{{employeeReceived.HireDate}}</td>
-        <td>{{employeeReceived.Salary}}</td>
+        <td>
+            <div ng-hide="employee.editing">{{employeeReceived.Name}}</div>
+            <input type="text" ng-show="employee.editing" ng-value="employeeReceived.Name" ng-model="employeeReceived.Name">
+        </td>
+        <td>
+            <div>{{employeeReceived.ID}}</div>
+        </td>
+        <td>
+            <div ng-hide="employee.editing">{{employeeReceived.Title}}</div>
+            <input type="text" ng-show="employee.editing" ng-value="employeeReceived.Title" ng-model="employeeReceived.Title">
+        </td>
+        <td>
+            <div>{{employeeReceived.HireDate}}</div>
+        </td>
+        <td>
+            <div ng-hide="employee.editing">{{employeeReceived.Salary}}</div>
+            <input type="text" ng-show="employee.editing" ng-value="employeeReceived.Salary" ng-model="employeeReceived.Salary">
+        </td>
         <td><button type="button" ng-click="tc.deleteEmployee(employeeReceived._id)">Delete</button></td>
-        <td><button type="button">Edit</button></td>
+        <td>
+            <button type="button" ng-hide="employee.editing" ng-click="employee.editing = true">Edit</button>
+            <button type="button" ng-show="employee.editing" ng-click="tc.editEmployee(employeeReceived); employee.editing = false">Submit</button>
+        </td>
     </tr>
 </table>
