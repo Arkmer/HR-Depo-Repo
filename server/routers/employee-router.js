@@ -10,8 +10,7 @@ const EmployeeSchema = new mongoose.Schema(
       ID: Number,
       Title: String,
       HireDate:{ type: Date, Default: Date()},
-      Salary: Number,
-      Employed:{type: Boolean, Default: true }
+      Salary: Number
   }
 );
 const Employee = mongoose.model('Employee', EmployeeSchema, 'hr');
