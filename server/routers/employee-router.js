@@ -57,11 +57,10 @@ router.get('/', (request, response) => {
     )
 
   })
-  router.put('/delete/:id', (request, response) => {
+  router.delete('/:id', (request, response) => {
     let id = request.params.id;
-    Employee.findByIdAndUpdate(
+    Employee.findByIdAndRemove(
       {"_id": id},
-      {$set: {Employed: false}},
       (error, updatedEmployee) => {
         if (error){
           console.log('error on update game:', error);
