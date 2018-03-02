@@ -33,10 +33,11 @@ app.service('CustomService', ['$http',  function($http){
         })
     }
     
-    self.getTotalEmployees = function() {
+    self.money = function() {
+        console.log('money');
         $http({
             method:'GET',
-            url:'/hr/total'
+            url:'/hr/money'
         }).then(function (response) {
             console.log(response.data);
             self.totalArray.list = response.data;
