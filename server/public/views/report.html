@@ -1,11 +1,39 @@
 <p>{{header}}</p>
 
+
+<table>
+    <thead>
+        <th>Average Salary</th>
+        <th>Maximum Salary</th>
+        <th>Minimum Salary</th>
+    </thead>
+    <tr>
+        <td>{{rc.average}}</td>
+        <td>{{rc.maxSalary}}</td>
+        <td>{{rc.minSalary}}</td>
+    </tr>
+</table>
+
+
+
 <table>
     <thead>
         <th>Total Employees</th>
     </thead>
     <tr>
         <td>{{rc.employeeArray}}</td>
+
+    </tr>
+</table>
+
+<table>
+    <thead>
+        <th>Job Title</th>
+        <th>Name</th>
+    </thead>
+    <tr ng-repeat="employeeReceived in rc.totalArray">
+        <td>{{employeeReceived.Title}}</td>
+        <td>{{employeeReceived.Name}}</td>
 
     </tr>
 </table>
