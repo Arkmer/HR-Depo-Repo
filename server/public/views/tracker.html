@@ -7,6 +7,8 @@
         <th>Title</th>
         <th>Hire Date</th>
         <th>Salary</th>
+        <th>Delete</th>
+        <th>Edit</th>
     </thead>
     <tr ng-repeat="employeeReceived in tc.employeeArray.list">
         <td>{{employeeReceived.Name}}</td>
@@ -14,5 +16,7 @@
         <td>{{employeeReceived.Title}}</td>
         <td>{{employeeReceived.HireDate}}</td>
         <td>{{employeeReceived.Salary}}</td>
+        <td><button type="button" ng-click="tc.deleteEmployee(employeeReceived._id)">Delete</button></td>
+        <td><button type="button">Edit</button></td>
     </tr>
 </table>

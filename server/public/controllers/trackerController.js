@@ -9,7 +9,7 @@ app.controller('trackerController', ['CustomService', '$scope', function(CustomS
     self.getEmployees();
     self.employeeArray = CustomService.employeeArray;
 
-    console.log( self.employeeArray );
+   self.deleteEmployee = CustomService.deleteEmployee;
     
     
     // $scope.employeeRecieved = ?????;

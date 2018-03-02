@@ -23,12 +23,23 @@ app.service('CustomService', ['$http',  function($http){
         console.log(newEmployee);
         $http({
             method: 'POST',
-            url: 'hr',
+            url: '/hr',
             data: newEmployee
         }).then(function (response) {
             self.getEmployees();
         }).catch(function (error) {
             console.log('error on post: ', error);
+        })
+    }
+
+    self.deleteEmployee = function (id) {
+        $http({
+            method: 'DELETE',
+            url: `/hr/${id}`
+        }).then(function (response) {
+            self.getEmployees();
+        }).catch(function (error) {
+            console.log('error on delete: ', error);
         })
     }
 
